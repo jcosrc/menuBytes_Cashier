@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package CashierPackage;
-
+import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author JCO
@@ -293,8 +294,18 @@ public class CashierDashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTable1ActionPerformed
-        CashierViewTable1 cvt1 = new CashierViewTable1();
-        cvt1.setVisible(true);
+        /*Delete this MySQL codes after test. Reference only*/
+        IDatabaseConnection iDatabaseConnection = new DatabaseConnection();
+        
+        String product_name = iDatabaseConnection.getProductNameByID(1);
+        
+        if(product_name!=null){
+            JOptionPane.showMessageDialog(null,"resultSet: " + product_name);
+        }
+        
+          /*Uncomment this*/
+//        CashierViewTable1 cvt1 = new CashierViewTable1();
+//        cvt1.setVisible(true);
         
     }//GEN-LAST:event_btnTable1ActionPerformed
 
